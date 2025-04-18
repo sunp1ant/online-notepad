@@ -10,8 +10,8 @@ export default defineConfig({
       includeAssets: ['corgi.png', 'corgi-notes.png', 'favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
         name: 'Online Notepad',
-        short_name: 'VitePWA',
-        description: 'VitePWA',
+        short_name: 'Online Notepad',
+        description: 'Online Notepad',
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',

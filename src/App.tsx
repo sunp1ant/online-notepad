@@ -1,7 +1,10 @@
-import './App.css'
-import { MantineProvider, createTheme } from '@mantine/core'
-import Demo from './Demo'
+import { MantineProvider, Stack, createTheme } from '@mantine/core'
+import CustomEditor from './CustomEditor'
 import { HeaderSimple } from './HeaderSimple';
+import CustomTable from './CustomTable';
+
+import { useEffect, useState } from 'react';
+import { addNote, getAllNotes, deleteNote, Note } from './db';
 
 const theme = createTheme({
   /** Your theme override here */
@@ -9,10 +12,27 @@ const theme = createTheme({
 
 function App() {
 
+  const [notes, setNotes] = useState<Note[]>([]);
+
+  const refreshItems = async () => {
+    const allNotes = await getAllNotes();
+    setNotes(allNotes);
+  };
+
+  useEffect(() => {
+    refreshItems();
+  }, [notes]);
+
+
   return (
     <MantineProvider theme={theme} defaultColorScheme='dark'>
+
       <HeaderSimple></HeaderSimple>
-      <Demo></Demo>
+      <Stack>
+        <CustomEditor></CustomEditor>
+        <CustomTable notes={notes}></CustomTable>
+      </Stack>
+
     </MantineProvider>
   )
 }
