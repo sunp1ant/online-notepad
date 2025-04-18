@@ -1,0 +1,1 @@
+{"name":"Online Notepad","short_name":"VitePWA","description":"VitePWA","start_url":"/","display":"standalone","background_color":"#ffffff","theme_color":"#ffffff","lang":"en","scope":"/online-notepad/","icons":[{"src":"corgi-notes.png","sizes":"192x192","type":"image/png"},{"src":"corgi-notes.png","sizes":"512x512","type":"image/png"}]}
